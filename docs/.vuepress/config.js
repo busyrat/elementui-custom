@@ -8,5 +8,5 @@ module.exports = {
   ],
   description: '基于 elementui 定制化的通用组件',
   cache: false,
-  plugins: ['vue-demo', 'elementui-docs']
+  plugins: ['vue-demo', 'elementui-docs', require('./t')]
 }
