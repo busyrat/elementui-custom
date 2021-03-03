@@ -49,7 +49,7 @@ export default {
 <template>
   <div>
     <el-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="年龄" prop="age" required minLength="2">
+      <el-form-item label="年龄" prop="age" required gt="20">
         <el-input type="age" v-model.number="numberValidateForm.age" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item>
