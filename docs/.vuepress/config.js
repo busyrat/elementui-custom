@@ -15,7 +15,9 @@ module.exports = {
   },
   plugins: [
     'vue-demo',
-    'elementui-docs',
+    ['elementui-docs', {
+      include: ['button', 'form']
+    }],
     () => ({
       chainWebpack(config) {
         config.resolve.alias.set('elementui-custom', process.cwd())
