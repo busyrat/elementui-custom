@@ -4,7 +4,6 @@ module.exports = {
   dest: './dist',
   title: 'elementui-custom',
   description: '基于 elementui 定制化的通用组件',
-  cache: false,
   themeConfig: {
     nav: [
       {

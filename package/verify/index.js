@@ -24,7 +24,7 @@ const init = () => {
     message: '请输入正确的手机号'
   }))
 
-  addRule('mail', mail => ({
+  addRule('email', mail => ({
     type: 'email',
     trigger: 'blur',
     message: '请输入正确的邮箱'
