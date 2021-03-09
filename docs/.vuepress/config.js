@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     'vue-demo',
     ['elementui-docs', {
-      include: ['button', 'form']
+      include: ['button', 'form', 'icon']
     }],
     () => ({
       chainWebpack(config) {
