@@ -1,57 +1,73 @@
 import { FormItem } from 'element-ui'
 const ElFormItemMethods = FormItem.methods
-import ruleMessages from './rules'
 
-const install = Vue => {
+let preRules = {}
+const addRule = (key, ruleFunc) => (preRules[key] = ruleFunc)
+
+const init = () => {
+  addRule('requiredAlias', (requiredAlias, ctx) => {
+    return {
+      trigger: 'blur',
+      required: true,
+      message: `请输入${ctx[requiredAlias]}`
+    }
+  })
+  addRule('min', min => ({
+    min: min,
+    trigger: 'blur',
+    message: `请输入至少${min}个字符`
+  }))
+
+  addRule('phone', phone => ({
+    pattern: /^(?=\d{11}$)^1(?:3\d|4[57]|5[^4\D]|6[67]|7[^249\D]|8\d|9[189])\d{8}$/,
+    trigger: 'blur',
+    message: '请输入正确的手机号'
+  }))
+
+  addRule('mail', mail => ({
+    type: 'email',
+    trigger: 'blur',
+    message: '请输入正确的邮箱'
+  }))
+
+  addRule('len', len => ({
+    len,
+    trigger: 'blur',
+    message: `请输入${len}位字符`
+  }))
+  addRule('gt', gt => ({
+    trigger: 'blur',
+    validator: (rule, val, callback) => {
+      if (val > Number(gt)) callback()
+      else callback(Error(`输入内容应大于${gt}`))
+    }
+  }))
+}
+
+const install = (Vue, options) => {
   const ElFormItemComponent = Vue.component('ElFormItem')
 
+  init()
+
+  if (options.rules) {
+    options.rules.forEach(([key, rule]) => addRule(key, rule))
+  }
+
   let props = {}
-  Object.keys(ruleMessages).forEach(key => (props[key] = String))
+  Object.keys(preRules).forEach(key => (props[key] = String))
 
   ElFormItemComponent.mixin({
     props,
     methods: {
       getRules() {
         let rules = ElFormItemMethods.getRules.apply(this, arguments)
-        rules.forEach(rule => {
-          if (rule.required && !rule.message && this.label) {
-            rule.message = ruleMessages.required.replace(/{label}/g, this.label)
+
+        Object.keys(preRules).forEach(key => {
+          if (this[key] !== undefined) {
+            rules.push(preRules[key](this[key], this))
           }
         })
-        if (this.min) {
-          rules.push({
-            min: this.min,
-            message: ruleMessages.min.replace(/{min}/g, this.min),
-            trigger: 'blur'
-          })
-        }
-        if (this.phone !== undefined) {
-          rules.push({
-            pattern: /^(?=\d{11}$)^1(?:3\d|4[57]|5[^4\D]|6[67]|7[^249\D]|8\d|9[189])\d{8}$/,
-            message: ruleMessages.phone
-          })
-        }
-        if (this.mail !== undefined) {
-          rules.push({
-            type: 'email',
-            message: ruleMessages.email
-          })
-        }
-        if (this.len !== undefined) {
-          rules.push({
-            len: this.len,
-            message: ruleMessages.len.replace(/{len}/g, this.len)
-          })
-        }
-        if (this.gt !== undefined) {
-          rules.push({
-            validator: (rule, val, callback) => {
-              console.log(val, this.gt)
-              if (val > Number(this.gt)) callback()
-              else callback(Error(ruleMessages.gt.replace(/{gt}/g, this.gt)))
-            }
-          })
-        }
+
         return rules
       }
     }

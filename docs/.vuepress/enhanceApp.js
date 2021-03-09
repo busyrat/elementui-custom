@@ -7,7 +7,18 @@ import Verify from 'elementui-custom/package/verify'
 
 export default ({ Vue }) => {
   Vue.use(ElementUI)
-  Vue.use(Verify)
+  Vue.use(Verify, {
+    rules: [
+      [
+        'lte',
+        lte => ({
+          type: "number",
+          max: Number(lte),
+          message: `不能大于${lte}`
+        })
+      ]
+    ]
+  })
   Vue.component('ZIcon', Icon)
   Vue.component('Iconfont', Iconfont)
 }
