@@ -10,10 +10,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
+      - name: Install and Build 🔧
+        run: |
+          node -v
+          yarn install
+          yarn build
+
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages
-          folder: ${{env.PROJECT_NAME}}/dist
-          dry-run: node -v &&yarn install && yarn run build
+          folder: dist
