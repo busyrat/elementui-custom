@@ -16,4 +16,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: dist
-          BUILD_SCRIPT: yarn install && yarn run build
+          BUILD_SCRIPT: node -v &&yarn install && yarn run build
