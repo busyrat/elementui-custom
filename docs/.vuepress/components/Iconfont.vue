@@ -45,7 +45,9 @@ export default {
 
   created() {
     this.form = { ...this.form, ...this.$route.query }
-    this.updateIcon()
+    if (typeof window !== 'undefined') {
+      this.updateIcon()
+    }
   },
 
   methods: {

@@ -20,8 +20,10 @@ import { insertJS, insertCSS } from '../utils/insert-element'
 export default function create(options) {
   const { key, extraCommonProps = {} } = options
 
-  insertJS(`//at.alicdn.com/t/${key}.js`)
-  insertCSS(`//at.alicdn.com/t/${key}.css`)
+  if (typeof window !== 'undefined') {
+    insertJS(`//at.alicdn.com/t/${key}.js`)
+    insertCSS(`//at.alicdn.com/t/${key}.css`)
+  }
 
   const Iconfont = context => {
     const { props, slots, data } = context

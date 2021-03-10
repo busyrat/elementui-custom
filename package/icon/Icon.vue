@@ -1,6 +1,6 @@
 <template>
   <i v-if="color" :class="[fontFamily, name]" :style="styles"></i>
-  <svg v-else aria-hidden="true" :style="styles">
+  <svg :class="[name]" v-else aria-hidden="true" :style="styles">
     <use :xlink:href="`#${name}`"></use>
   </svg>
 </template>
