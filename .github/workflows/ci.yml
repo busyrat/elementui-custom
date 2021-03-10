@@ -15,5 +15,5 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages
-          folder: dist
+          folder: ${{env.PROJECT_NAME}}/dist
           dry-run: node -v &&yarn install && yarn run build
