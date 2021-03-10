@@ -7,6 +7,9 @@
     "build": "vuepress build docs"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=12"
+  },
   "devDependencies": {
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
