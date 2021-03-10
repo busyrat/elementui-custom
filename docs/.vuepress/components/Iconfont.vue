@@ -1,30 +1,34 @@
 <template>
   <div>
-    <el-form inline :model="form" label-position="left" style="width: 500px;" >
+    <el-form inline :model="form" label-position="left" style="width: 500px;">
       <el-form-item prop="iconfontKey" label="Iconfont Key">
-        <el-input style="width: 220px;" v-model.trim="form.iconfontKey" />
-      </el-form-item>
-      <el-form-item prop="fontClass" label="FontClass/Symbol 前缀">
-        <el-input v-model.trim="form.fontClass" />
-      </el-form-item>
-      <el-form-item prop="fontFamily" label="Font Family">
-        <el-input v-model.trim="form.fontFamily" />
-      </el-form-item>
-      <el-form-item>
+        <el-input style="width: 220px;" placeholder="iconfontKey" v-model.trim="form.iconfontKey" />
         <el-button @click="updateIcon">更新图标</el-button>
       </el-form-item>
+      <el-collapse>
+        <el-collapse-item title="更多参数">
+          <el-form-item prop="fontClass" label="FontClass/Symbol 前缀">
+            <el-input v-model.trim="form.fontClass" placeholder="fontClass" />
+          </el-form-item>
+          <el-form-item prop="fontFamily" label="Font Family">
+            <el-input v-model.trim="form.fontFamily" placeholder="fontFamily" />
+          </el-form-item>
+        </el-collapse-item>
+      </el-collapse>
     </el-form>
 
     <ul class="icon-list zicon">
       <li v-for="name in icons" :key="name">
         <span>
-          <z-icon :class="name" :name="name" size="36px" :font-family="form.fontFamily" />
+          <icon :class="name" :name="name" size="36px" :font-family="form.fontFamily" />
         </span>
       </li>
     </ul>
   </div>
 </template>
 <script>
+import { insertJS, insertCSS, copyToClipboard } from 'elementui-custom/package/utils/insert-element'
+
 export default {
   props: {},
 
@@ -40,13 +44,14 @@ export default {
   },
 
   created() {
+    this.form = { ...this.form, ...this.$route.query }
     this.updateIcon()
   },
 
   methods: {
     updateIcon() {
-      this.insertCSS(`https://at.alicdn.com/t/${this.form.iconfontKey}.css`)
-        .then(() => {
+      insertCSS(`https://at.alicdn.com/t/${this.form.iconfontKey}.css`)
+        .then(el => {
           this.icons = this.getIcons(this.form.fontClass)
           this.$nextTick(() => {
             this.iconLists = [...this.$el.getElementsByClassName('icon-list')]
@@ -56,38 +61,11 @@ export default {
         .catch(() => {
           this.icons = []
         })
-      this.insertJS(`https://at.alicdn.com/t/${this.form.iconfontKey}.js`).catch(() => {
+      insertJS(`https://at.alicdn.com/t/${this.form.iconfontKey}.js`).catch(() => {
         this.icons = []
       })
     },
-    insertCSS(href) {
-      if (this.iconfontCSS) {
-        document.head.removeChild(this.iconfontCSS)
-      }
-      return new Promise((resolve, reject) => {
-        this.iconfontCSS = document.createElement('link')
-        this.iconfontCSS.setAttribute('rel', 'styleSheet')
-        this.iconfontCSS.setAttribute('href', href)
-        this.iconfontCSS.setAttribute('type', 'text/css')
-        this.iconfontCSS.setAttribute('crossorigin', 'anonymous')
-        document.head.append(this.iconfontCSS)
-        this.iconfontCSS.onload = resolve
-        this.iconfontCSS.onerror = reject
-      })
-    },
-    insertJS(src) {
-      if (this.iconfontJS) {
-        document.head.removeChild(this.iconfontJS)
-      }
-      return new Promise((resolve, reject) => {
-        this.iconfontJS = document.createElement('script')
-        this.iconfontJS.setAttribute('src', src)
 
-        document.head.append(this.iconfontJS)
-        this.iconfontJS.onload = resolve
-        this.iconfontJS.onerror = reject
-      })
-    },
     getIcons(key) {
       const reg = new RegExp(`^\.(${key})[\\w-]*?(?=:{1,2}before\\s*\\{\\s*content)`, 'g')
       // 过滤包含 .keyxxx:before{ content } 的 styleStyleSheets
@@ -104,7 +82,7 @@ export default {
           }
           rules = sheet.cssRules
         }
-        return [...rules].some(rule => reg.test(rule.cssText))
+        return [...rules].some(rule => reg.test(rule.cssText)) && sheet.href?.includes(this.form.iconfontKey)
       })
 
       let iconClasses = []
@@ -118,21 +96,7 @@ export default {
       // 最后去个重
       return [...new Set(iconClasses)]
     },
-    copyToClipboard(value) {
-      const input = document.createElement('input')
-      // 禁止键盘弹起
-      input.setAttribute('readonly', 'readonly')
-      input.setAttribute('value', value)
-      input.style.position = 'fixed'
-      document.body.appendChild(input)
-      // input.select()
-      input.focus()
-      input.setSelectionRange(0, 9999)
-      if (document.execCommand) {
-        document.execCommand('copy')
-      }
-      document.body.removeChild(input)
-    },
+
     iconListClick(e) {
       let className
       if (/use/.test(e.target.tagName)) {
@@ -142,9 +106,11 @@ export default {
       } else {
         className = e.target.className
       }
-      this.copyToClipboard(className)
-      if (this.$message) {
-        this.$message(`copy: ${className}`)
+      if (new RegExp(`^${this.form.fontClass}`).test(className)) {
+        copyToClipboard(className)
+        if (this.$message) {
+          this.$message(`copy: ${className}`)
+        }
       }
     }
   }

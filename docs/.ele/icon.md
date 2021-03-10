@@ -54,6 +54,8 @@
 </style>
 
 <script>
+import { copyToClipboard } from 'elementui-custom/package/utils/insert-element'
+
 export default {
   created() {  
     if (typeof window !== 'undefined') {
@@ -95,21 +97,6 @@ export default {
       // 最后去个重
       return [...new Set(iconClasses)]
     },
-    copyToClipboard(value) {
-      const input = document.createElement('input')
-      // 禁止键盘弹起
-      input.setAttribute('readonly', 'readonly')
-      input.setAttribute('value', value)
-      input.style.position = 'fixed'
-      document.body.appendChild(input)
-      // input.select()
-      input.focus()
-      input.setSelectionRange(0, 9999)
-      if (document.execCommand) {
-        document.execCommand('copy')
-      }
-      document.body.removeChild(input)
-    },
     iconListClick(e) {
       let className
       if (/use/.test(e.target.tagName) ) {
@@ -120,7 +107,7 @@ export default {
         className = e.target.className
       }
       if (/^(el-icon)/.test(className)) {
-        this.copyToClipboard(`<i class="${className}"/>`)
+        copyToClipboard(`<i class="${className}"/>`)
         if (this.$message) {
           this.$message(`copy: <i class="${className}"/>`)
         }
@@ -140,3 +127,38 @@ export default {
 </script>
 
 <!-- ---------------------- 对原文档的补充 end ----------------------  -->
+
+## Icon Extend
+
+### 引入自定义图标
+
+```js
+const MyIcon = Icon.createFromIconfontCN({ key: 'font_8d5l8fzk5b87iudi' })
+Vue.component('Icon', MyIcon)
+```
+
+tips: <a href="../iconfont.html?iconfontKey=font_8d5l8fzk5b87iudi">查看所有图标</a>
+
+如果你使用 html-webpack-plugin 还提供一个插件[html-webpack-iconfont-plugin](https://github.com/busyrat/html-webpack-iconfont-plugin)，自动注入
+
+::: demo
+
+```html
+<template>
+  <div>
+    <icon color="green" name="icon-biaoqing" size="36px" font-family="iconfont" />
+    <icon name="icon-souren" size="36px" />
+  </div>
+</template>
+```
+
+:::
+
+### Props
+
+| Name        | Description                          | Type                | Required | Default    |
+| ----------- | ------------------------------------ | ------------------- | -------- | ---------- |
+| color       | 图标颜色，没有颜色即为使用 SVG 模式  | `String`            | `false`  | -          |
+| size        | 图标大小                             | `String` / `Number` | `false`  | '20px'     |
+| name        | 图标的名字，从 iconfont 仓库复制名字 | `String`            | `true`   | -          |
+| font-family | iconfont 官网上可以配置              | `String`            | `false`  | 'iconfont' |

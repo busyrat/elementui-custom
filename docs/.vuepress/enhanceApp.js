@@ -1,7 +1,7 @@
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'elementui-custom/theme/v1.scss'
-import Icon from 'elementui-custom/package/icon'
+import Icon from 'elementui-custom/package/icon/index.js'
 import Iconfont from './components/Iconfont'
 import Verify from 'elementui-custom/package/verify'
 
@@ -12,13 +12,15 @@ export default ({ Vue }) => {
       [
         'lte',
         lte => ({
-          type: "number",
+          type: 'number',
           max: Number(lte),
           message: `不能大于${lte}`
         })
       ]
     ]
   })
-  Vue.component('ZIcon', Icon)
+  Vue.component('Icon', Icon.createFromIconfontCN({
+    key: 'font_8d5l8fzk5b87iudi'
+  }))
   Vue.component('Iconfont', Iconfont)
 }
