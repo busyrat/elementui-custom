@@ -137,9 +137,11 @@ const MyIcon = Icon.createFromIconfontCN({ key: 'font_8d5l8fzk5b87iudi' })
 Vue.component('Icon', MyIcon)
 ```
 
-tips: <a href="../iconfont.html?iconfontKey=font_8d5l8fzk5b87iudi">查看所有图标</a>
+:::tip
+<a href="../iconfont.html?iconfontKey=font_8d5l8fzk5b87iudi">查看新注册的 Icon 组件中所有的图标</a>
 
-如果你使用 html-webpack-plugin 还提供一个插件[html-webpack-iconfont-plugin](https://github.com/busyrat/html-webpack-iconfont-plugin)，自动注入
+如果你使用 html-webpack-plugin 还提供了一个插件 [html-webpack-iconfont-plugin](https://github.com/busyrat/html-webpack-iconfont-plugin)，自动注入
+:::
 
 ::: demo
 

@@ -1,9 +1,10 @@
 <template>
   <div>
-    <el-form inline :model="form" label-position="left" style="width: 500px;">
+    <el-form class="print-ignore" inline :model="form" label-position="left" style="width: 500px;">
       <el-form-item prop="iconfontKey" label="Iconfont Key">
         <el-input style="width: 220px;" placeholder="iconfontKey" v-model.trim="form.iconfontKey" />
         <el-button @click="updateIcon">更新图标</el-button>
+        <el-button @click="print" icon="el-icon-printer"></el-button>
       </el-form-item>
       <el-collapse>
         <el-collapse-item title="更多参数">
@@ -51,6 +52,9 @@ export default {
   },
 
   methods: {
+    print() {
+      window.print()
+    },
     updateIcon() {
       insertCSS(`https://at.alicdn.com/t/${this.form.iconfontKey}.css`)
         .then(el => {
@@ -182,6 +186,12 @@ export default {
         }
       }
     }
+  }
+}
+
+@media print {
+  .print-ignore, .navbar  {
+    display: none;
   }
 }
 </style>
