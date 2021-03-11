@@ -19,11 +19,12 @@ export default ({ Vue }) => {
       ]
     ]
   })
-  Vue.component(
-    'Icon',
-    Icon.createFromIconfontCN({
-      key: 'font_8d5l8fzk5b87iudi'
-    })
-  )
+  Vue.component('Icon', Icon.createFromIconfontCN({
+    key: 'font_8d5l8fzk5b87iudi'
+  }))
+
+  Vue.component('RIcon', Icon.createFromIconfontCN({
+    key: 'font_2412575_kxagbx9rtsg'
+  }))
   Vue.component('Iconfont', Iconfont)
 }

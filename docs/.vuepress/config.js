@@ -12,8 +12,8 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: 'iconfont',
-        link: '/iconfont'
+        text: 'About',
+        link: '/resume'
       }
     ]
   },
