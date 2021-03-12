@@ -1,10 +1,12 @@
 <template lang="pug">
 .resume-page
-  //- .sub
-  //-   div 湖北武汉   
+  
   .main
-    h1 王浩
+    h2 王浩 
+      el-button(type="text" @click="print" icon="el-icon-printer")
+    h4.print-only 5年工作经验 | 28岁 | 湖北省武汉市 | 15271875343 | mcmagni@163.com
     .target 求职目标：前端工程师
+    .target 职业技能：<b>JavaScript、HTML、CSS</b> | <b>Vue</b>、react、angular1.x | react-native | NodeJS | <b>webpack、git</b>、docker
 
     h3
       r-icon(name="icon-jiaoyu1" size="40px" color="primary")
@@ -158,17 +160,17 @@
 
     .box
       .period
-        .time 2017.07-2017.08
+        .time 2019.07-2019.07
         .location
-          a(href="https://github.com/wh-Coder/hupuIMI") 高仿虎扑体育APP
-        .other react-native
+          a(href="https://github.com/busyrat/vuepress-plugins") VuePress Plugins
+        .other VuePress
       .content
         .content-item 主要工作：
           ol.flex1
-            li 使用 Charles 工具抓取虎扑体育APP的接口，并从接口出发分析APP结构
-            li 主体结构用 react-native + redux 框架编写；新闻帖子采用 vue 编写静态页通过 webview 嵌入
-        .content-item 已经完成：
-          p 新闻首页、论坛首页、、用户登录登出、帖子查看回复等
+            li vuepress 中使用类似 element-ui 官方文档的效果：在 markdown 中写 vue 组件 demo
+            li 把 elementui 文档转成 vuepress 文档，并支持文档内容扩展
+            li 基于 vuese 自动生成项目组件文档    
+    
     .box
       .period
         .time 2019.07-2019.07
@@ -180,26 +182,43 @@
           ol.flex1
             li 基于 html-webpack-plugins 快速引入 iconfont 图标库到 html 模板中
             li 支持 CDN 和本地两种模式
+    
     .box
       .period
-        .time 2019.07-2019.07
+        .time 2017.07-2017.08
         .location
-          a(href="https://github.com/busyrat/vuepress-plugins") VuePress Plugins
-        .other VuePress
+          a(href="https://github.com/wh-Coder/hupuIMI") 高仿虎扑体育APP
+        .other react-native
       .content
         .content-item 主要工作：
           ol.flex1
-            li vuepress 中使用类似 element-ui 官方文档的效果：在 markdown 中写 vue 组件 demo
-            li 把 elementui 文档转成 vuepress 文档，并支持文档内容扩展
-            li 基于 vuese 自动生成项目组件文档    
+            li 使用 Charles 工具抓取虎扑体育APP的接口，并从接口出发分析APP结构
+            li 主体结构用 react-native + redux 框架编写；新闻帖子采用 vue 编写静态页通过 webview 嵌入
+        .content-item 已经完成：
+          p 新闻首页、论坛首页、、用户登录登出、帖子查看回复等
 </template>
+
+<script>
+export default {
+  methods: {
+    print() {
+      window.print()
+    }
+  }
+}
+</script>
 
 <style lang="stylus" scoped>
 primary = rgb(50, 70, 100)
 
+.print-only
+  display none
 @media print {
   .print-ignore, .navbar  {
     display: none;
+  }
+  .print-only {
+    display: inline-block
   }
   .box {
     page-break-after: auto;
@@ -208,10 +227,12 @@ primary = rgb(50, 70, 100)
   .theme-default-content:not(.custom) > *:first-child {
     margin 0
   }
-  .resume-page {
+  .resume-page, .theme-default-content {
     box-shadow: none!important;
+    margin: 0!important;
   }
 }
+
 
 .primary
   color primary
