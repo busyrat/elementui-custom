@@ -4,7 +4,7 @@
   .main
     h2 王浩 
       el-button(type="text" @click="print" icon="el-icon-printer")
-    h4.print-only 5年工作经验 | 28岁 | 湖北省武汉市 | 15271875343 | mcmagni@163.com
+    h4.print-only {{ decode('NSVFNSVCOSVCNCVFNSVCNyVBNSVFNCVCRCU5QyVFNyVCQiU4RiVFOSVBQSU4QyUyMCU3QyUyMDI4JUU1JUIyJTgxJTIwJTdDJTIwJUU2JUI5JTk2JUU1JThDJTk3JUU3JTlDJTgxJUU2JUFEJUE2JUU2JUIxJTg5JUU1JUI4JTgyJTIwJTdDJTIwMTUyNzE4NzUzNDMlMjAlN0MlMjBtY21hZ25pQDE2My5jb21idXN5PXJhdA==') }}
     .target 求职目标：前端工程师
     .target 职业技能：<b>JavaScript、HTML、CSS</b> | <b>Vue</b>、react、angular1.x | react-native | NodeJS | <b>webpack、git</b>、docker
 
@@ -26,7 +26,7 @@
     .box
       .period
         .time 2019.04-至今
-        .location 智联集团
+        .location {{ decode('JUU2JUFEJUE2JUU2JUIxJTg5JUU1JThEJTkzJUU1JUIwJTk0JUU2JTk5JUJBJUU4JTgxJTk0JUU5JTlCJTg2JUU1JTlCJUEyYnVzeT1yYXQ=') }}
         .other 前端工程师
       .content 
         p 工作描述:
@@ -199,11 +199,12 @@
 </template>
 
 <script>
+import { encode, decode } from 'elementui-custom/package/utils/base64'
 export default {
   methods: {
-    print() {
-      window.print()
-    }
+    print: () => window.print(),
+    encode,
+    decode
   }
 }
 </script>
