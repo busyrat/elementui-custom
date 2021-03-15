@@ -1,1 +1,1 @@
-<resume />
+<pages-Resume />

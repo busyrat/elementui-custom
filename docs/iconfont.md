@@ -1,3 +1,1 @@
-## iconfont
-
-<Iconfont />
+<pages-Iconfont />
