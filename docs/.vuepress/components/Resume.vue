@@ -4,10 +4,18 @@
   .main
     h2 王浩 
       el-button(type="text" @click="print" icon="el-icon-printer")
-    h4.print-only {{ decode('NSVFNSVCOSVCNCVFNSVCNyVBNSVFNCVCRCU5QyVFNyVCQiU4RiVFOSVBQSU4QyUyMCU3QyUyMDI4JUU1JUIyJTgxJTIwJTdDJTIwJUU2JUI5JTk2JUU1JThDJTk3JUU3JTlDJTgxJUU2JUFEJUE2JUU2JUIxJTg5JUU1JUI4JTgyJTIwJTdDJTIwMTUyNzE4NzUzNDMlMjAlN0MlMjBtY21hZ25pQDE2My5jb21idXN5PXJhdA==') }}
-    .target 求职目标：前端工程师
-    .target 职业技能：<b>JavaScript、HTML、CSS</b> | <b>Vue</b>、react、angular1.x | react-native | NodeJS | <b>webpack、git</b>、docker
-
+      .info.print-only {{ decode('JUU2JUI5JTk2JUU1JThDJTk3JUU3JTlDJTgxJUU2JUFEJUE2JUU2JUIxJTg5JUU1JUI4JTgyJTIwJTdDJTIwMTUyNzE4NzUzNDMlMjAlN0MlMjBtY21hZ25pQDE2My5jb21idXN5PXJhdA==') }}
+    .target 求职目标：前端工程师 | 5年经验
+    .content 
+      .content-item 自我评价：
+        ol.flex1
+          li 熟练使用 HTML 和 CSS 进行页面的制作
+          li 熟练使用 JavaScript 进行 BOM/DOM 操作以及事件处理，熟悉 ES6+ 语法
+          li 熟练使用 vue + vue-router 进行单页应用开发，对 react 生态和 angular1.x 也有些了解
+          li 会使用 webpack + babel 优化项目，并尝试开发过相关插件
+          li 有开发 react-native 的经验，对跨平台的技术充满兴趣
+          li 熟悉 git 命令, 熟悉各类提升开发效率的 Mac 工具软件，对持续集成和docker也有些了解
+  
     h3
       r-icon(name="icon-jiaoyu1" size="40px" color="primary")
       .underline 教育背景
@@ -34,7 +42,6 @@
           li 开发搭建前端基础工程，包括脚手架、组件库（二次封装elementUI）、持续集成CI（基于gitlab）
           li 开发电子合同签署平台web端，技术栈：Vue（elementUI）、pdfjs
           li 开发用户中心中台项目，技术栈：Vue（elementUI）、Nuxt.js
-          li 开发仅供内部学习使用的远程屏幕共享桌面客户端，技术栈：Electron + react
     
     .box
       .period
@@ -57,7 +64,7 @@
         p 工作描述:
         ul
           li 开发圣才PC端（www.100xuexi.com） ASP网页技术栈:IIS 环境、.net、js、jQuery
-          li 维护圣才手机网页端（wx.100xuexi.com）SPA 网页技术栈:angular1.x、ionic1.0
+          li 维护圣才手机网页端（wx.100xuexi.com）SPA 网页技术栈:angular1.x1.x、ionic1.0
           li 开发 IOS 和 Android 移动客户端webview调用的网页:技术栈:vue、vux、vuex 
 
     h3
@@ -71,23 +78,13 @@
         .other web前端开发
       .content
         .content-item 项目介绍：
-          .flex1 整个项目基于 二次封装的element + pdfjs 编写，实现一套线上管理合同、合同签署的系统
+          .flex1 项目基于 二次封装的element + pdfjs 编写，实现一套线上管理合同、合同签署的系统
         .content-item 主要工作：
           ol.flex1
-            li web端和H5端项目基础搭建
+            li web端和H5端项目基础搭建，制定项目规范
+            li 梳理任务需求，研究实现方案，功能落地，任务拆分、人员分配等
             li pdf相关功能：展示、下载、添加可编辑区域，添加印章预览等功能
-    .box
-      .period
-        .time 2020.01-2020.04
-        .location 远程屏幕共享桌面客户端（内部学习）
-        .other web前端开发
-      .content
-        .content-item 项目介绍：
-          .flex1 整个项目基于 electron + react 编写的p2p服务，实现可以远程屏幕共享的桌面客户端
-        .content-item 主要工作：
-          ol.flex1
-            li 项目搭建，WebRTC相关技术调研和分享
-            li 实现一对一的屏幕共享，远程操控基础功能
+    
     .box
       .period
         .time 2019.07-2019.10
@@ -95,10 +92,10 @@
         .other web前端开发
       .content
         .content-item 项目介绍：
-          .flex1 整个项目基于 vuepress + elementUI 编写，仅使用 markdown 语法就可以展示各项目中通用的组件
+          .flex1 项目基于 vuepress + elementUI 编写，仅使用 markdown 语法就可以展示各项目中通用的组件
         .content-item 主要工作：
           ol.flex1
-            li 整个项目的创意和基础搭建，编写UI定制化的组件和文档（包括 Icon、Message-box等几十个组件）
+            li 项目的创意和基础搭建，编写UI定制化的组件和文档（包括 Icon、Message-box等几十个组件）
             li 开发了 vue-demo 插件，类似 element-ui 官方文档的效果：在 markdown 中写 vue 组件 demo
             li 开发了 elementui-doc 插件，可以把 elementui 文档转成 vuepress 文档，并支持文档内容扩展
     .box
@@ -108,10 +105,10 @@
         .other 客户端开发
       .content
         .content-item 项目介绍：
-          .flex1 整个项目基于 react-native@0.44 + mobx 框架编写，是一个监管大气污染，环保工作人员管理APP
+          .flex1 项目基于 react-native@0.44 + mobx 框架编写，是一个监管大气污染，环保工作人员管理APP
         .content-item 主要工作：
           ol.flex1
-            li 整个项目的基础搭建，gitlab ci + 蒲公英 完成APP自动更新迭代
+            li 项目的基础搭建，gitlab ci + 蒲公英 完成APP自动更新迭代
             li 搭建工具库 （react-styled），封装基础组件
             li APP的地图模块和各种数据图形化展示模块都是基于 webview 完成
     .box
@@ -121,7 +118,7 @@
         .other web前端开发
       .content
         .content-item 项目介绍：
-          .flex1 整个项目基于 vue + elementUI 框架编写，是一个实时监控大气污染的 web 平台
+          .flex1 项目基于 vue + elementUI 框架编写，是一个实时监控大气污染的 web 平台
         .content-item 主要工作：
           ol.flex1
             li 整个项目的基础搭建 webpack + gitlab ci 工作流；搭建项目模板，使用 vue-cli + stylus + pug
@@ -134,7 +131,7 @@
         .other H5前端开发
       .content
         .content-item 项目介绍：
-          .flex1 整个项目基于angular1.x + ionic框架编写，是圣才电子书纸质书的拓展服务，实现在线阅读和在线做题两大主要功能。（wx.100xuexi.com）
+          .flex1 项目基于angular1.x1.x + ionic框架编写，是圣才电子书纸质书的拓展服务，实现在线阅读和在线做题两大主要功能。（wx.100xuexi.com）
         .content-item 主要工作：
           ol.flex1
             li 负责整个项目的UI改版
@@ -209,31 +206,33 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-primary = rgb(50, 70, 100)
-
-.print-only
-  display none
+<style lang="stylus">
 @media print {
   .print-ignore, .navbar  {
     display: none;
   }
   .print-only {
-    display: inline-block
+    display: inline-block!important;
   }
   .box {
     page-break-after: auto;
     page-break-inside: avoid;
   }
-  .theme-default-content:not(.custom) > *:first-child {
-    margin 0
+  .theme-default-content {
+    padding: 0!important;
   }
   .resume-page, .theme-default-content {
     box-shadow: none!important;
-    margin: 0!important;
+    margin-top: 0!important;
   }
 }
+</style>
 
+<style lang="stylus" scoped>
+primary = rgb(50, 70, 100)
+
+.print-only
+  display none
 
 .primary
   color primary
@@ -253,6 +252,10 @@ ol, ul, p
   display flex
   .main
     padding 10px 30px
+    .info
+      float right
+      font-size 14px
+      padding-top 14px
     .period
       display flex
       justify-content space-between
