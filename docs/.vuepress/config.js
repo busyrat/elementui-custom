@@ -1,3 +1,5 @@
+const path = require('path')
+console.log(__dirname, path.resolve('../pages'))
 module.exports = {
   port: 7070,
   base: '/elementui-custom/',
@@ -30,6 +32,12 @@ module.exports = {
         config.resolve.alias.set('elementui-custom', process.cwd())
       }
     }),
-    '@snowdog/vuepress-plugin-pdf-export'
+    '@snowdog/vuepress-plugin-pdf-export',
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, '../components')
+      }
+    ]
   ]
 }

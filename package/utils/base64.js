@@ -1,10 +1,10 @@
-const e = (str, salt = 'busy=rat') => {
+const e = (str, salt = '') => {
   if (typeof window !== 'undefined') {
     return window.btoa(window.encodeURI(str + salt))
   }
 }
 
-const d = (str, salt = 'busy=rat') => {
+const d = (str, salt = '') => {
   if (typeof window !== 'undefined') {
     return window.decodeURI(window.atob(str)).replace(salt, '')
   }

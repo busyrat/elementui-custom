@@ -1140,7 +1140,7 @@
   dependencies:
     nprogress "^0.2.0"
 
-"@vuepress/plugin-register-components@1.8.2":
+"@vuepress/plugin-register-components@1.8.2", "@vuepress/plugin-register-components@^1.8.2":
   version "1.8.2"
   resolved "https://registry.npm.taobao.org/@vuepress/plugin-register-components/download/@vuepress/plugin-register-components-1.8.2.tgz#2fb45a68b0a1efb8822670d95c3b231a2d0eb74d"
   integrity sha1-L7RaaLCh77iCJnDZXDsjGi0Ot00=

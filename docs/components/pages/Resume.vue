@@ -200,8 +200,8 @@ import { encode, decode } from 'elementui-custom/package/utils/base64'
 export default {
   methods: {
     print: () => window.print(),
-    encode,
-    decode
+    encode: str => encode(str, 'busy=rat'),
+    decode: str => decode(str, 'busy=rat')
   }
 }
 </script>
