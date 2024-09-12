@@ -5,15 +5,14 @@
     h2 王浩 
       el-button(type="text" @click="print" icon="el-icon-printer")
       .info.print-only {{ decode('JUU2JUI5JTk2JUU1JThDJTk3JUU3JTlDJTgxJUU2JUFEJUE2JUU2JUIxJTg5JUU1JUI4JTgyJTIwJTdDJTIwMTUyNzE4NzUzNDMlMjAlN0MlMjBtY21hZ25pQDE2My5jb21idXN5PXJhdA==') }}
-    .target 求职目标：前端工程师 | 5年经验
+    .target 求职目标：前端工程师 | 8年经验
     .content 
       .content-item 自我评价：
         ol.flex1
           li 熟练使用 HTML 和 CSS 进行页面的制作
           li 熟练使用 JavaScript 进行 BOM/DOM 操作以及事件处理，熟悉 ES6+ 语法
-          li 熟练使用 vue + vue-router 进行单页应用开发，对 react 生态和 angular1.x 也有些了解
+          li 熟练使用 react、vue 等前端流行框架
           li 会使用 webpack + babel 优化项目，并尝试开发过相关插件
-          li 有开发 react-native 的经验，对跨平台的技术充满兴趣
           li 熟悉 git 命令, 熟悉各类提升开发效率的 Mac 工具软件，对持续集成和docker也有些了解
   
     h3
@@ -25,7 +24,7 @@
         .location 湖北工业大学
         .other 电子信息科学与技术
       .content 
-        p 成绩：英语四级、计算机二级、湖北省物理实验创新设计大赛一等奖等
+        p 成绩：英语四级、计算机二级等
       
     h3
       r-icon(name="icon-Work" size="40px" color="primary")
@@ -33,7 +32,7 @@
 
     .box
       .period
-        .time 2019.04-至今
+        .time 2019.04-2021.04
         .location {{ decode('JUU2JUFEJUE2JUU2JUIxJTg5JUU1JThEJTkzJUU1JUIwJTk0JUU2JTk5JUJBJUU4JTgxJTk0JUU5JTlCJTg2JUU1JTlCJUEyYnVzeT1yYXQ=') }}
         .other 前端工程师
       .content 
@@ -66,90 +65,6 @@
           li 开发圣才PC端（www.100xuexi.com） ASP网页技术栈:IIS 环境、.net、js、jQuery
           li 维护圣才手机网页端（wx.100xuexi.com）SPA 网页技术栈:angular1.x1.x、ionic1.0
           li 开发 IOS 和 Android 移动客户端webview调用的网页:技术栈:vue、vux、vuex 
-
-    h3
-      r-icon(name="icon-xiangmu" size="40px" color="primary")
-      .underline 项目经历
-
-    .box
-      .period
-        .time 2020.04-至今
-        .location 无纸化电子签章系统
-        .other web前端开发
-      .content
-        .content-item 项目介绍：
-          .flex1 项目基于 二次封装的element + pdfjs 编写，实现一套线上管理合同、合同签署的系统
-        .content-item 主要工作：
-          ol.flex1
-            li web端和H5端项目基础搭建，制定项目规范
-            li 梳理任务需求，研究实现方案，功能落地，任务拆分、人员分配等
-            li pdf相关功能：展示、下载、添加可编辑区域，添加印章预览等功能
-    
-    .box
-      .period
-        .time 2019.07-2019.10
-        .location 前端组PC端公共组件库
-        .other web前端开发
-      .content
-        .content-item 项目介绍：
-          .flex1 项目基于 vuepress + elementUI 编写，仅使用 markdown 语法就可以展示各项目中通用的组件
-        .content-item 主要工作：
-          ol.flex1
-            li 项目的创意和基础搭建，编写UI定制化的组件和文档（包括 Icon、Message-box等几十个组件）
-            li 开发了 vue-demo 插件，类似 element-ui 官方文档的效果：在 markdown 中写 vue 组件 demo
-            li 开发了 elementui-doc 插件，可以把 elementui 文档转成 vuepress 文档，并支持文档内容扩展
-    .box
-      .period
-        .time 2018.10-2019.04
-        .location 大气网格化监管平台APP
-        .other 客户端开发
-      .content
-        .content-item 项目介绍：
-          .flex1 项目基于 react-native@0.44 + mobx 框架编写，是一个监管大气污染，环保工作人员管理APP
-        .content-item 主要工作：
-          ol.flex1
-            li 项目的基础搭建，gitlab ci + 蒲公英 完成APP自动更新迭代
-            li 搭建工具库 （react-styled），封装基础组件
-            li APP的地图模块和各种数据图形化展示模块都是基于 webview 完成
-    .box
-      .period
-        .time 2017.08-2018.10
-        .location 大气网格化监管平台web端
-        .other web前端开发
-      .content
-        .content-item 项目介绍：
-          .flex1 项目基于 vue + elementUI 框架编写，是一个实时监控大气污染的 web 平台
-        .content-item 主要工作：
-          ol.flex1
-            li 整个项目的基础搭建 webpack + gitlab ci 工作流；搭建项目模板，使用 vue-cli + stylus + pug
-            li 平台首页地图模块功能的开发，前期使用 ArcGis for js 3.x，后期使用 leaflet 重构
-            li 平台短基础组件的封装，包括各种数据图形化展示
-    .box
-      .period
-        .time 2016.06-2017.07
-        .location 圣才电子书微信端
-        .other H5前端开发
-      .content
-        .content-item 项目介绍：
-          .flex1 项目基于angular1.x1.x + ionic框架编写，是圣才电子书纸质书的拓展服务，实现在线阅读和在线做题两大主要功能。（wx.100xuexi.com）
-        .content-item 主要工作：
-          ol.flex1
-            li 负责整个项目的UI改版
-            li 负责开发电子书详情页的送礼功能（webSocket）
-            li 部分会被客户端调用的页面，用vue重构
-    .box
-      .period
-        .time 2016.06-2017.07
-        .location 
-          a(href="https://e.100xuexi.com/MyEbook") 圣才电子书PC端【我要出书】
-        .other web前端开发
-      .content
-        .content-item 项目介绍：
-          .flex1 实现一个在线编辑书封面的网页工具，类似一个H5编辑器，以及简单的图片编辑功能
-        .content-item 主要工作：
-          ol.flex1 
-            li 负责开发『封面编辑』模块，文字编辑、模块拖动旋转、放大缩小
-            li 相关技术：jQuery、rangyJS（控制光标）、html2Canvas、alloyImageJS（图片滤镜）
 
     h3
       r-icon(name="icon-geren" size="40px" color="primary")
