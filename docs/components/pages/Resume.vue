@@ -10,10 +10,12 @@
       .content-item 自我评价：
         ol.flex1
           li 熟练使用 HTML 和 CSS 进行页面的制作
-          li 熟练使用 JavaScript 进行 BOM/DOM 操作以及事件处理，熟悉 ES6+ 语法
-          li 熟练使用 react、vue 等前端流行框架
-          li 会使用 webpack + babel 优化项目，并尝试开发过相关插件
-          li 熟悉 git 命令, 熟悉各类提升开发效率的 Mac 工具软件，对持续集成和docker也有些了解
+          li 熟练使用 JavaScript，了解 TypeScript
+          li 熟悉 React、Vue.js，以及相关的周边技术栈
+          li 熟悉大屏、数据展示、3D相关技术：Echarts、Three.js 高德地图 等
+          li 熟悉 webpack，对项目工程化、打包优化有落地经验
+          li 熟悉 性能优化，对网页加载、流畅度优化有落地经验
+          li 了解 Node.js，有一定全栈能力，个人项目中使用过 Next.js，NestJS 等
   
     h3
       r-icon(name="icon-jiaoyu1" size="40px" color="primary")
@@ -29,6 +31,18 @@
     h3
       r-icon(name="icon-Work" size="40px" color="primary")
       .underline 工作经验
+
+    .box
+      .period
+        .time 2021.04-2025.04
+        .location 明源云集团控股有限公司
+        .other 前端工程师
+      .content
+        p 工作描述:
+        ul
+          li 开发维护面向地产行业的低代码数据分析平台，主要负责大屏渲染引擎（React）和核心组件物料(React、Vue)
+          li 开发维护数据资产管理平台 React
+          li 开发维护页面回归测试工具（通过自动化截图对比，检测界面是否意外变化的工具）：React、Puppeteer
 
     .box
       .period
@@ -52,7 +66,6 @@
         ul
           li 开发大气网格化监管平台web端，技术栈：Vue（elementUI）、echart、ArcGIS（Leaflet重构）
           li 开发大气网格化监管平台移动客户端，技术栈：react-native、mobx
-          li 地图气象插值服务，定时生成污染因子插值图，服务端技术栈：NodoJS、mongodb
     
     .box
       .period
@@ -62,9 +75,8 @@
       .content 
         p 工作描述:
         ul
-          li 开发圣才PC端（www.100xuexi.com） ASP网页技术栈:IIS 环境、.net、js、jQuery
+          li 开发圣才PC端（www.100xuexi.com） ASP网页技术栈:IIS 环境、js、jQuery
           li 维护圣才手机网页端（wx.100xuexi.com）SPA 网页技术栈:angular1.x1.x、ionic1.0
-          li 开发 IOS 和 Android 移动客户端webview调用的网页:技术栈:vue、vux、vuex 
 
     h3
       r-icon(name="icon-geren" size="40px" color="primary")
