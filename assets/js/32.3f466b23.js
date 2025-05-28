@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[32],{461:function(t,e,n){"use strict";n.r(e);var s=n(16),i=Object(s.a)({},(function(){var t=this._self._c;return t("div",[t("el-button",{attrs:{type:"text"}},[this._v("文字按钮")]),this._v(" "),t("el-button",{attrs:{type:"text",disabled:""}},[this._v("文字按钮")])],1)}),[],!1,null,null,null);e.default=i.exports}}]);
