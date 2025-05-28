@@ -11,11 +11,12 @@
         ol.flex1
           li 熟练使用 HTML 和 CSS 进行页面的制作
           li 熟练使用 JavaScript，了解 TypeScript
-          li 熟悉 React、Vue.js，以及相关的周边技术栈
+          li 熟悉 React、Vue2.js，以及相关的周边技术栈
           li 熟悉大屏、数据展示、3D相关技术：Echarts、Three.js 高德地图 等
           li 熟悉 webpack，对项目工程化、打包优化有落地经验
           li 熟悉 性能优化，对网页加载、流畅度优化有落地经验
           li 了解 Node.js，有一定全栈能力，个人项目中使用过 Next.js，NestJS 等
+          li 对编程相关技术不局限于前端，对python、go、sql、docker等略有了解
   
     h3
       r-icon(name="icon-jiaoyu1" size="40px" color="primary")
@@ -35,12 +36,15 @@
     .box
       .period
         .time 2021.04-2025.04
-        .location 明源云集团控股有限公司
+        .location 武汉明源云科技有限公司
         .other 前端工程师
       .content
         p 工作描述:
         ul
-          li 开发维护面向地产行业的低代码数据分析平台，主要负责大屏渲染引擎（React）和核心组件物料(React、Vue)
+          li 开发维护面向地产行业的低代码数据分析平台，主要负责：
+            p 1. 大屏渲染引擎（物料组件根据配置展示）、组件编辑器（拖拉拽、物料组件属性配置操作）、预览/发布页面等
+            p 2. 核心物料组件开发：echart图表展示组件、地图组件、3D地图等，技术栈：React、Vue、Threejs
+            p 3. 平台性能优化、react升级（经历了v16.7 -> v16.8 -> v17.2）
           li 开发维护数据资产管理平台 React
           li 开发维护页面回归测试工具（通过自动化截图对比，检测界面是否意外变化的工具）：React、Puppeteer
 
@@ -54,7 +58,7 @@
         ul
           li 开发搭建前端基础工程，包括脚手架、组件库（二次封装elementUI）、持续集成CI（基于gitlab）
           li 开发电子合同签署平台web端，技术栈：Vue（elementUI）、pdfjs
-          li 开发用户中心中台项目，技术栈：Vue（elementUI）、Nuxt.js
+          li 开发用户中心中台项目，技术栈：Vue（elementUI）
     
     .box
       .period
