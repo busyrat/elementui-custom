@@ -9,14 +9,14 @@
     .content 
       .content-item 自我评价：
         ol.flex1
-          li 熟练使用 HTML 和 CSS 进行页面的制作
-          li 熟练使用 JavaScript，了解 TypeScript
-          li 熟悉 React、Vue2.js，以及相关的周边技术栈
+          li 熟练使用 HTML 和 CSS 进行页面的制作；熟练使用 JavaScript，了解 TypeScript
+          li 熟悉 React（4年）、Vue2.js（4年），以及相关的周边技术栈
           li 熟悉大屏、数据展示、3D相关技术：Echarts、Three.js 高德地图 等
           li 熟悉 webpack，对项目工程化、打包优化有落地经验
           li 熟悉 性能优化，对网页加载、流畅度优化有落地经验
           li 了解 Node.js，有一定全栈能力，个人项目中使用过 Next.js，NestJS 等
-          li 对编程相关技术不局限于前端，对python、go、sql、docker等略有了解
+          li 对编程相关技术学习不局限于前端，对python、go、sql、docker等略有了解
+          li 有良好的代码风格，良好的 git 提交习惯
   
     h3
       r-icon(name="icon-jiaoyu1" size="40px" color="primary")
@@ -25,7 +25,7 @@
       .period
         .time 2012.09-2016.06
         .location 湖北工业大学
-        .other 电子信息科学与技术
+        .other 电子信息科学与技术/本科
       .content 
         p 成绩：英语四级、计算机二级等
       
@@ -41,11 +41,19 @@
       .content
         p 工作描述:
         ul
-          li 开发维护面向地产行业的低代码数据分析平台，主要负责：
+          li 开发维护面向地产行业的低代码数据分析平台（tob）
+            p 主要负责：
             p 1. 大屏渲染引擎（物料组件根据配置展示）、组件编辑器（拖拉拽、物料组件属性配置操作）、预览/发布页面等
-            p 2. 核心物料组件开发：echart图表展示组件、地图组件、3D地图等，技术栈：React、Vue、Threejs
-            p 3. 平台性能优化、react升级（经历了v16.7 -> v16.8 -> v17.2）
+            p 2. 核心物料组件开发：Echart图表展示组件、地图组件等，从0到1开发基于 Three.js 的3D地图和建筑相关组件
+            p 3. 平台性能优化，项目打包产物大小优化，提供给第三方二次开发的SDK优化
+            p 主要业绩：
+            p 1. 基于平台制作的大屏页面在线数量10W+
+            p 2. 对大屏页面进行性能优化，lighthouse 评分从50分左右提升至80分左右，并内部推广优化方案
+            p 3. 推动平台技术栈升级，主导了v16.7、v16.8、v17.2三个版本的升级，上线零事故
           li 开发维护数据资产管理平台 React
+            p 主要负责：
+            p 1. 制作大屏所需的数据集涉及功能的全流程开发
+            p 2. 组合大屏成为一个应用
           li 开发维护页面回归测试工具（通过自动化截图对比，检测界面是否意外变化的工具）：React、Puppeteer
 
     .box
@@ -88,6 +96,19 @@
 
     .box
       .period
+        .time 2024.04-2024.04
+        .location
+          a(href="https://big.busyrat.me") 某堆肥数字平台
+        .other reactjs tailwindcss
+      .content
+        .content-item 主要工作：
+          ol.flex1
+            li 制定技术方案，完成监控大屏（包含日数据、月数据、监控、3D基础模型状态等）
+            li 制定前后端数据交接的方案：采用后端只负责通过PostgreSQL云端后端服务清洗数据，前端通过 GraphQL API从数据库取数的方案
+            li 负责项目前端部分上云，托管到 vercel 上（此项目目前仍然在运行）
+
+    .box
+      .period
         .time 2019.07-2019.07
         .location
           a(href="https://github.com/busyrat/vuepress-plugins") VuePress Plugins
@@ -98,6 +119,8 @@
             li vuepress 中使用类似 element-ui 官方文档的效果：在 markdown 中写 vue 组件 demo
             li 把 elementui 文档转成 vuepress 文档，并支持文档内容扩展
             li 基于 vuese 自动生成项目组件文档    
+            li.italic 这份简历就是基于这个插件功能实现，托管在&nbsp;
+              a(href="https://busyrat.github.io/elementui-custom/resume.html") github pages
     
     .box
       .period
@@ -176,6 +199,10 @@ ol, ul, p
   border-bottom 3px solid primary
   margin-left 50px
   margin-top -40px
+
+.italic {
+  font-style: italic
+}
 
 .resume-page
   font-size 13px
